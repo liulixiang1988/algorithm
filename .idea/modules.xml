@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/2-addTwoNum/2-addTwoNum.iml" filepath="$PROJECT_DIR$/2-addTwoNum/2-addTwoNum.iml" />
       <module fileurl="file://$PROJECT_DIR$/206-ReverseLinkedList/206-ReverseLinkedList.iml" filepath="$PROJECT_DIR$/206-ReverseLinkedList/206-ReverseLinkedList.iml" />
+      <module fileurl="file://$PROJECT_DIR$/24-SwapNodeInPairs/24-SwapNodeInPairs.iml" filepath="$PROJECT_DIR$/24-SwapNodeInPairs/24-SwapNodeInPairs.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/algorithm.iml" filepath="$PROJECT_DIR$/.idea/algorithm.iml" />
     </modules>
   </component>
