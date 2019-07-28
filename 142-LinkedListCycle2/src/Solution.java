@@ -38,9 +38,9 @@ class ListNode {
 }
 
 public class Solution {
-    public boolean hasCycle(ListNode head) {
+    public ListNode detectCycle(ListNode head) {
         if (head == null) {
-            return false;
+            return null;
         }
         ListNode fast = head;
         ListNode slow = head;
@@ -49,9 +49,13 @@ public class Solution {
             slow = slow.next;
             fast = fast.next.next;
             if (slow == fast) {
-                return true;
+                while(head != slow) {
+                    head = head.next;
+                    slow = slow.next;
+                }
+                return slow;
             }
         }
-        return false;
+        return null;
     }
 }

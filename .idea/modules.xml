@@ -3,6 +3,7 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/141-LinkedListCycle/141-LinkedListCycle.iml" filepath="$PROJECT_DIR$/141-LinkedListCycle/141-LinkedListCycle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/142-LinkedListCycle2/142-LinkedListCycle2.iml" filepath="$PROJECT_DIR$/142-LinkedListCycle2/142-LinkedListCycle2.iml" />
       <module fileurl="file://$PROJECT_DIR$/2-addTwoNum/2-addTwoNum.iml" filepath="$PROJECT_DIR$/2-addTwoNum/2-addTwoNum.iml" />
       <module fileurl="file://$PROJECT_DIR$/206-ReverseLinkedList/206-ReverseLinkedList.iml" filepath="$PROJECT_DIR$/206-ReverseLinkedList/206-ReverseLinkedList.iml" />
       <module fileurl="file://$PROJECT_DIR$/24-SwapNodeInPairs/24-SwapNodeInPairs.iml" filepath="$PROJECT_DIR$/24-SwapNodeInPairs/24-SwapNodeInPairs.iml" />
