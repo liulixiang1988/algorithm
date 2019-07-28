@@ -1,4 +1,3 @@
-import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -12,27 +11,14 @@ class Solution {
     }
 
     public int[] twoSum(int[] nums, int target) {
-        HashMap<Integer, Integer> numOrderMap = new HashMap<>();
+        Map<Integer, Integer> map = new HashMap<>();
         for (int i = 0; i < nums.length; i++) {
-            numOrderMap.put(nums[i], i);
-        }
-
-        Arrays.sort(nums);
-
-        int i = 0, j = nums.length - 1;
-        while (true) {
-            if (nums[i] + nums[j] < target) {
-                i++;
-            } else if (nums[i] + nums[j] > target) {
-                j--;
-            } else {
-                break;
+            int item = target - nums[i];
+            if (map.containsKey(item)) {
+                return new int[]{map.get(item), i};
             }
+            map.put(nums[i], i);
         }
-        int finalI = nums[i];
-        int finalJ = nums[j];
-        return numOrderMap.entrySet().stream()
-                .filter(entity -> entity.getKey() == finalI || entity.getKey() == finalJ)
-                .mapToInt(Map.Entry::getValue).toArray();
+        return null;
     }
 }
