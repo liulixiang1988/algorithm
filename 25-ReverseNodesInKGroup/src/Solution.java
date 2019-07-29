@@ -32,8 +32,12 @@ class ListNode {
     }
 }
 
-public class Solution {
+class Solution {
     public ListNode reverseKGroup(ListNode head, int k) {
+        if (head == null || k < 2) {
+            return head;
+        }
+
         ListNode result = new ListNode(0);
         result.next = head;
         ListNode prev = result;
@@ -41,6 +45,7 @@ public class Solution {
         ListNode current = head;
 
         while(current != null) {
+            //查找下一组的tail node
             for(int i = 0; i < k; i++) {
                 groupEnd = groupEnd.next;
                 if (groupEnd == null)
@@ -48,22 +53,46 @@ public class Solution {
             }
 
             ListNode nextGroupHead = groupEnd.next;
-            while(current != nextGroupHead) {
-                ListNode nextTemp = current.next;
-                current.next = prev;
-                prev = current;
-                current = nextTemp;
-            }
+            //截取一组node
+            groupEnd.next = null;
+            ListNode groupHead = current;
+            //反转列表，并将head node链接到现有list
+            prev.next = reverseList(groupHead);
 
-            prev = current;
-            current = nextGroupHead;
+            //移动到分组队尾，为下一次迭代做准备
+            prev = groupEnd = current;
+            //链接队尾与下一分组的队首
+            prev.next = current = nextGroupHead;
         }
         return result.next;
     }
 
+    // 反转链表，反转后head变成了 tail node
+    public ListNode reverseList(ListNode head) {
+        ListNode current = head;
+        ListNode pre = null;
+        while(current != null) {
+            ListNode nextNode = current.next;
+            current.next = pre;
+            pre = current;
+            current = nextNode;
+        }
+        return pre;
+    }
+
     public static void main(String[] args) {
-        ListNode head = generateList(new int[]{1, 2, 3, 4, 5});
-        ListNode result = new Solution().reverseKGroup(head, 2);
+        int[] data = {1, 2, 3, 4, 5};
+        testCase(data, 0);
+        testCase(data, 1);
+        testCase(data, 2);
+        testCase(data, 3);
+        testCase(data, 4);
+        testCase(data, 5);
+    }
+
+    public static void testCase(int[] data, int k) {
+        ListNode head = generateList(data);
+        ListNode result = new Solution().reverseKGroup(head, k);
         System.out.println(ListNode2String(result));
     }
 
