@@ -48,7 +48,7 @@ public class Solution {
             }
 
             ListNode nextGroupHead = groupEnd.next;
-            while(current != groupEnd) {
+            while(current != nextGroupHead) {
                 ListNode nextTemp = current.next;
                 current.next = prev;
                 prev = current;
