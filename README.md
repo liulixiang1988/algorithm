@@ -18,3 +18,4 @@
 
 - [1160. 拼写单词](https://leetcode-cn.com/problems/find-words-that-can-be-formed-by-characters/)
 - [997.寻找法官](https://leetcode-cn.com/problems/find-the-town-judge/submissions/)
+- [406. 根据身高重建队列](https://leetcode-cn.com/problems/queue-reconstruction-by-height)
