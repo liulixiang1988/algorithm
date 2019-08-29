@@ -17,4 +17,4 @@
 ## 未整理
 
 - [1160. 拼写单词](https://leetcode-cn.com/problems/find-words-that-can-be-formed-by-characters/)
-- [997.]
+- [997.寻找法官](https://leetcode-cn.com/problems/find-the-town-judge/submissions/)
