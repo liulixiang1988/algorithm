@@ -47,5 +47,23 @@
  * f[0][n - 1]
  */
 public class Solution {
+    public int longestPalindromeSubseq(String s) {
+        char[] arrays = s.toCharArray();
+        int n = arrays.length;
+        int[][] f = new int[n][n];
 
+        for(int i = n-1; i >= 0; i--) {
+            f[i][i] = 1;
+            for(int j= i+1; j < n; j++) {
+                if (s.charAt(i) == s.charAt(j)) {
+                    f[i][j] = 2 + f[i+1][j-1];
+                }
+                else {
+                    //左边向右移一格，或者，右边向左移一格
+                    f[i][j] = Math.max(f[i+1][j], f[i][j-1]);
+                }
+            }
+        }
+        return f[0][n-1];
+    }
 }
