@@ -2,7 +2,9 @@
  * Copyright (c) Liu Lixiang 2019-2019. All rights reserved
  */
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 /**
@@ -16,7 +18,7 @@ import java.util.Set;
  */
 public class Solution {
 
-  public int lengthOfLongestSubstring(String s) {
+  private int lengthOfLongestSubstring(String s) {
     int res = 0;
     for (int i = 0; i < s.length(); i++) {
       Set<Character> set = new HashSet<>();
@@ -31,9 +33,54 @@ public class Solution {
     return res;
   }
 
+  //o(2n)
+  private int lengthOfLongestSubstring2(String s) {
+    int n = s.length();
+    int res = 0;
+    Set<Character> set = new HashSet<>();
+    int i = 0;
+    int j = 0;
+    while (i < n && j < n) {
+      if (!set.contains(s.charAt(j))) {
+        set.add(s.charAt(j++));
+      } else {
+        set.remove(s.charAt(i++));
+      }
+      res = Math.max(res, set.size());
+    }
+    return res;
+  }
+
+  //o(n)
+  private int lengthOfLongestSubstring3(String s) {
+    int n = s.length();
+    int res = 0;
+    Map<Character, Integer> map = new HashMap<>();
+    int i = 0;
+    int j = 0;
+    while (i < n && j < n) {
+      if (map.containsKey(s.charAt(j))) {
+        i = Math.max(map.get(s.charAt(j)), i);
+      }
+      res = Math.max(res, j - i + 1);
+      map.put(s.charAt(j), j + 1);
+      j++;
+    }
+    return res;
+  }
+
+  /**
+   * 测试.
+   *
+   * @param args NA
+   */
   public static void main(String[] args) {
     Solution s = new Solution();
     System.out.println(s.lengthOfLongestSubstring("abcdefg"));
+    System.out.println(s.lengthOfLongestSubstring2("abcdefg"));
+    System.out.println(s.lengthOfLongestSubstring3("abcdefg"));
     System.out.println(s.lengthOfLongestSubstring("abada"));
+    System.out.println(s.lengthOfLongestSubstring2("abada"));
+    System.out.println(s.lengthOfLongestSubstring3("abada"));
   }
 }
