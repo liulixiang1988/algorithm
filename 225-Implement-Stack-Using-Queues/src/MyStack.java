@@ -1,3 +1,6 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 /*
 使用队列实现栈的下列操作：
 
@@ -18,28 +21,48 @@ empty() -- 返回栈是否为空
 class MyStack {
 
     /** Initialize your data structure here. */
+    Queue<Integer> l1 = new LinkedList<>();
+    Queue<Integer> l2 = new LinkedList<>();
+
     public MyStack() {
 
     }
 
     /** Push element x onto stack. */
     public void push(int x) {
-
+        l1.add(x);
+        while(!l2.isEmpty()) {
+            l1.add(l2.remove());
+            l2.remove(0);
+        }
+        Queue<Integer> temp = l1;
+        l1 = l2;
+        l2 = temp;
     }
 
     /** Removes the element on top of the stack and returns that element. */
     public int pop() {
-
+        return l2.remove();
     }
 
     /** Get the top element. */
     public int top() {
-
+        return l2.peek();
     }
 
     /** Returns whether the stack is empty. */
     public boolean empty() {
+        return l2.isEmpty();
+    }
 
+    public static void main(String[] args) {
+        MyStack myStack = new MyStack();
+        myStack.push(1);
+        myStack.push(2);
+        System.out.println(myStack.top());
+        myStack.pop();
+        myStack.pop();
+        System.out.println(myStack.empty());
     }
 }
 
