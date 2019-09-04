@@ -14,6 +14,10 @@
 - [232. 用栈实现队列](https://leetcode-cn.com/problems/implement-queue-using-stacks/solution/yong-zhan-shi-xian-dui-lie-by-leetcode/)
 - [225. 用队列实现栈](https://leetcode-cn.com/problems/implement-stack-using-queues/description/)
 
+## 滑动窗口
+
+- [992. K 个不同整数的子数组](https://leetcode-cn.com/problems/subarrays-with-k-different-integers)
+
 ## 动态规划
 
 - [516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/)
