@@ -8,6 +8,10 @@
 - [141. 环形链表](https://leetcode-cn.com/problems/linked-list-cycle/)
 - [142. 环形链表2](https://leetcode-cn.com/problems/linked-list-cycle-ii/)
 
+## 数组与双指针
+
+- [15. 三数之和](https://leetcode-cn.com/problems/3sum/)
+
 ## 堆栈和队列
 
 - [20. 有效的括号](https://leetcode-cn.com/problems/valid-parentheses/)

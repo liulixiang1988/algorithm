@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/1160-FindWords/1160-FindWords.iml" filepath="$PROJECT_DIR$/1160-FindWords/1160-FindWords.iml" />
       <module fileurl="file://$PROJECT_DIR$/141-LinkedListCycle/141-LinkedListCycle.iml" filepath="$PROJECT_DIR$/141-LinkedListCycle/141-LinkedListCycle.iml" />
       <module fileurl="file://$PROJECT_DIR$/142-LinkedListCycle2/142-LinkedListCycle2.iml" filepath="$PROJECT_DIR$/142-LinkedListCycle2/142-LinkedListCycle2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/15-Three-Sum/15-Three-Sum.iml" filepath="$PROJECT_DIR$/15-Three-Sum/15-Three-Sum.iml" />
       <module fileurl="file://$PROJECT_DIR$/2-addTwoNum/2-addTwoNum.iml" filepath="$PROJECT_DIR$/2-addTwoNum/2-addTwoNum.iml" />
       <module fileurl="file://$PROJECT_DIR$/20-ValidParentheses/20-ValidParentheses.iml" filepath="$PROJECT_DIR$/20-ValidParentheses/20-ValidParentheses.iml" />
       <module fileurl="file://$PROJECT_DIR$/206-ReverseLinkedList/206-ReverseLinkedList.iml" filepath="$PROJECT_DIR$/206-ReverseLinkedList/206-ReverseLinkedList.iml" />
@@ -19,6 +20,7 @@
       <module fileurl="file://$PROJECT_DIR$/997-findJudge/997-findJudge.iml" filepath="$PROJECT_DIR$/997-findJudge/997-findJudge.iml" />
       <module fileurl="file://$PROJECT_DIR$/OJ/OJ.iml" filepath="$PROJECT_DIR$/OJ/OJ.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/algorithm.iml" filepath="$PROJECT_DIR$/.idea/algorithm.iml" />
+      <module fileurl="file://$PROJECT_DIR$/algorithm-impl/algorithm-impl.iml" filepath="$PROJECT_DIR$/algorithm-impl/algorithm-impl.iml" />
     </modules>
   </component>
 </project>
