@@ -2,7 +2,10 @@
  * Copyright (c) Liu Lixiang 2019-2019. All rights reserved
  */
 
+import java.util.ArrayDeque;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Deque;
 import java.util.List;
 import java.util.PriorityQueue;
 
@@ -81,5 +84,39 @@ public class Solution {
       win.remove(0);
     }
     return res;
+  }
+
+  public int[] maxSlidingWindow3(int[] nums, int k) {
+    if (nums.length == 0 || k == 0) {
+      return new int[0];
+    }
+
+    if (k == 1) {
+      return nums;
+    }
+
+    int[] res = new int[nums.length - k + 1];
+    Deque<Integer> window = new ArrayDeque<>();
+    for (int i = 0; i < nums.length; i++) {
+      while (window.size() > 0 && nums[window.peekLast()] < nums[i]) {
+        window.removeLast();
+      }
+      window.addLast(i);
+      if (i < k - 1) {
+        continue;
+      }
+      res[i - k + 1] = nums[window.peekFirst()];
+      if (window.peekFirst() <= i - k + 1) {
+        window.pollFirst();
+      }
+    }
+    return res;
+  }
+
+  public static void main(String[] args) {
+    Solution solution = new Solution();
+    System.out.println(Arrays.toString(solution.maxSlidingWindow3(new int[]{7, 2, 4}, 2)));
+    System.out.println(
+        Arrays.toString(solution.maxSlidingWindow3(new int[]{1, 3, -1, -3, 5, 3, 6, 7}, 3)));
   }
 }
