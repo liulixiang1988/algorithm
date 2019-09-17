@@ -22,6 +22,7 @@
       <module fileurl="file://$PROJECT_DIR$/OJ/OJ.iml" filepath="$PROJECT_DIR$/OJ/OJ.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/algorithm.iml" filepath="$PROJECT_DIR$/.idea/algorithm.iml" />
       <module fileurl="file://$PROJECT_DIR$/algorithm-impl/algorithm-impl.iml" filepath="$PROJECT_DIR$/algorithm-impl/algorithm-impl.iml" />
+      <module fileurl="file://$PROJECT_DIR$/lc/lc.iml" filepath="$PROJECT_DIR$/lc/lc.iml" />
     </modules>
   </component>
 </project>
