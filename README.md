@@ -31,6 +31,12 @@
 
 - [516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/)
 
+## 字符串
+
+- [3. 无重复字符的最长子串](https://leetcode-cn.com/problems/longest-substring-without-repeating-characters/)
+- [516. 最长回文子序列](https://leetcode-cn.com/problems/longest-palindromic-subsequence/)
+
+
 ## 未整理
 
 - [1160. 拼写单词](https://leetcode-cn.com/problems/find-words-that-can-be-formed-by-characters/)
