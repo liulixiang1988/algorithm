@@ -2,7 +2,10 @@
  * Copyright (c) Liu Lixiang 2019-2019. All rights reserved
  */
 
-package lc98;
+package lc98验证二叉搜索树;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /*
 给定一个二叉树，判断其是否是一个有效的二叉搜索树。
@@ -49,7 +52,26 @@ public class Solution {
     }
   }
 
+  List<Integer> values = new ArrayList<>();
+
   public boolean isValidBST(TreeNode root) {
-    return false;
+    inOrder(root);
+    Integer pre = null;
+    for (int val : values) {
+      if (pre != null && val <= pre) {
+        return false;
+      }
+      pre = val;
+    }
+    return true;
+  }
+
+  private void inOrder(TreeNode node) {
+    if (node == null) {
+      return;
+    }
+    inOrder(node.left);
+    values.add(node.val);
+    inOrder(node.right);
   }
 }

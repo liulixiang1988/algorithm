@@ -2,7 +2,7 @@
  * Copyright (c) Liu Lixiang 2019-2019. All rights reserved
  */
 
-package lc98;
+package lc98验证二叉搜索树;
 
 import org.junit.jupiter.api.Test;
 
