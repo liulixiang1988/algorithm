@@ -54,6 +54,7 @@ public class Solution {
 
   List<Integer> values = new ArrayList<>();
 
+  //解法1，中序遍历后从小到大遍历一遍
   public boolean isValidBST(TreeNode root) {
     inOrder(root);
     Integer pre = null;
@@ -73,5 +74,23 @@ public class Solution {
     inOrder(node.left);
     values.add(node.val);
     inOrder(node.right);
+  }
+
+  //解法2，左子树比根节点值都要小，右子树比根节点值要大，因此传入一个最大值，一个最小值，然后进行递归比较
+  public boolean isValidBST2(TreeNode root) {
+    return isValid(root, null, null);
+  }
+
+  private boolean isValid(TreeNode root, Integer min, Integer max) {
+    if (root == null) {
+      return true;
+    }
+    if (max != null && root.val >= max) {
+      return false;
+    }
+    if (min != null && root.val <= min) {
+      return false;
+    }
+    return isValid(root.left, min, root.val) && isValid(root.right, root.val, max);
   }
 }
