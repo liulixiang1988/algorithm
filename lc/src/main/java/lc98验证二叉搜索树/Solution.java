@@ -93,4 +93,25 @@ public class Solution {
     }
     return isValid(root.left, min, root.val) && isValid(root.right, root.val, max);
   }
+
+  //解法3，解法1中遍历所有节点时使用了列表存储所有节点，其实每次只存储前面一个节点，用当前值与前面节点值比较
+  private Integer pre = null;
+
+  public boolean isValidBST3(TreeNode root) {
+    if (root == null) {
+      return true;
+    }
+    //先遍历左子树，如果左子树不是二叉搜索树就返回false
+    if (!isValidBST3(root.left)) {
+      return false;
+    }
+    //比较root节点与pre的值，如果不比pre大，返回
+    if (pre != null && root.val <= pre) {
+      return false;
+    }
+    //遍历了root节点后，root就变成了pre
+    pre = root.val;
+    //遍历右子树
+    return isValidBST3(root.right);
+  }
 }
