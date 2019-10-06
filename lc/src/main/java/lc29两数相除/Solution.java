@@ -19,8 +19,8 @@ public class Solution {
       return Integer.MAX_VALUE;
     }
     boolean negative = (dividend ^ divisor) < 0;
-    int t = Math.abs(dividend);
-    int d = Math.abs(divisor);
+    long t = Math.abs((long) dividend);
+    long d = Math.abs((long) divisor);
     int result = 0;
     for (int i = 31; i >= 0; i--) {
       if ((t >> i) >= d) {

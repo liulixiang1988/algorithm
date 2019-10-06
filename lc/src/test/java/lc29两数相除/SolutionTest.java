@@ -16,5 +16,6 @@ class SolutionTest {
     assertEquals(50, solution.divide(100, 2));
     assertEquals(33, solution.divide(100, 3));
     assertEquals(33, solution.divide(101, 3));
+    assertEquals(-2147483648, solution.divide(-2147483648, 1));
   }
 }
