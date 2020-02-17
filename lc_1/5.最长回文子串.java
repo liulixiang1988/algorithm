@@ -32,30 +32,28 @@
 
 // @lc code=start
 class Solution {
+    private int low;
+    private int length;
     public String longestPalindrome(String s) {
         if (s == null || s.length() == 0) {
             return s;
         }
-        int start = 0;
-        int end = 0;
         for (int i = 0; i < s.length(); i++) {
-            int len1 = palindromic(s, i, i);
-            int len2 = palindromic(s, i, i + 1);
-            int len = Math.max(len1, len2);
-            if (len > end - start + 1) {
-                start = i - (len-1) / 2;
-                end = i + len / 2;
-            }
+            expandPalindrome(s, i, i);
+            expandPalindrome(s, i, i + 1);
         }
-        return s.substring(start, end + 1);
+        return s.substring(low, low + length);
     }
 
-    public int palindromic(String s, int start, int end) {
-        while (start >= 0 && end < s.length() && s.charAt(start) == s.charAt(end)) {
-            start--;
-            end++;
+    private void expandPalindrome(String s, int left, int right) {
+        while (left >= 0 && right < s.length() && s.charAt(left) == s.charAt(right)) {
+            left--;
+            right++;
         }
-        return end - start - 1;
+        if (length < right - left - 1) {
+            low = left + 1;
+            length = right - left - 1;
+        }
     }
 }
 // @lc code=end
