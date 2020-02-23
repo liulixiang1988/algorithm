@@ -37,7 +37,7 @@ import java.util.PriorityQueue;
 
 // @lc code=start
 class Solution {
-    public int findKthLargest(int[] nums, int k) {
+    public int findKthLargest2(int[] nums, int k) {
         PriorityQueue<Integer> priorityQueue = new PriorityQueue<>(k, new Comparator<Integer>() {
             @Override
             public int compare(Integer a, Integer b) {
@@ -52,6 +52,40 @@ class Solution {
             result = priorityQueue.poll();
         }
         return result;
+    }
+
+    public int findKthLargest(int[] nums, int k) {
+        return quickSelect(nums, 0, nums.length - 1, k - 1);
+    }
+
+    public int quickSelect(int[] nums, int left, int right, int k) {
+        if (left == right) {
+            return nums[left];
+        }
+        int pivot = getIndex(nums, left, right);
+        if (pivot == k) {
+            return nums[pivot];
+        }
+        if (pivot > k) {
+            return quickSelect(nums, left, pivot-1, k);
+        }
+        return quickSelect(nums, pivot + 1, right, k);
+    }
+
+    private int getIndex(int[] nums, int left, int right) {
+        int pivot = nums[left];
+        while (left < right) {
+            while (nums[right] <= pivot && left < right) {
+                right--;
+            }
+            nums[left] = nums[right];
+            while (nums[left] >= pivot && left < right) {
+                left++;
+            }
+            nums[right] = nums[left];
+        }
+        nums[left] = pivot;
+        return left;
     }
 }
 // @lc code=end
