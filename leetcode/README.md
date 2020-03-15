@@ -22,3 +22,21 @@ public int maxDepth(TreeNode root) {
     return Math.max(left, right) + 1;
 }
 ```
+
+## 搜索
+
+- 695 岛屿的最大面积（dfs)：访问过的设置为0，同时返回各边探测之和
+```java
+private int dfs(int[][] grid, int x, int y) {
+    int count = 1;
+    for(int[] d : directions) {
+        int newX = x + d[0];
+        int newY = y + d[1];
+        if (newX >= 0 && newX < rows && newY >= 0 && newY < cols && grid[newX][newY] != 0) {
+            grid[newX][newY] = 0;
+            count += dfs(grid, newX, newY);
+        }
+    }
+    return count;
+}
+```
