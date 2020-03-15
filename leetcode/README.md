@@ -1,5 +1,9 @@
 [TOC]
 
+## 链表
+
+- 206 反转链表 （引入pre。现保存current的下一个，然后current.next = pre, pre = current, current = next)
+
 ## 数组
 
 - 283 移动零（双指针，一遍遍历）
