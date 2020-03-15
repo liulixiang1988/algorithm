@@ -34,7 +34,31 @@
 
 // @lc code=start
 class Solution {
-    public void merge(int[] nums1, int m, int[] nums2, int n) {
+    public void merge(int[] A, int m, int[] B, int n) {
+        int i = m - 1;
+        int j = n - 1;
+        int k = m + n -1;
+        while (i >= 0 || j >= 0) {
+            if (i >= 0 && j >= 0) {
+                if (A[i] > B[j]) {
+                    A[k] = A[i];
+                    i--;
+                } else {
+                    A[k] = B[j];
+                    j--;
+                }
+            } else if (i >= 0) {
+                A[k] = A[i];
+                i--;
+            } else if (j >= 0) {
+                A[k] = B[j];
+                j--;
+            }
+            k--;
+        }
+    }
+
+    public void merge2(int[] nums1, int m, int[] nums2, int n) {
         while(n>0){
             if (m==0||nums2[n-1]>nums1[m-1]){
                 nums1[m+n-1] = nums2[n-1];
