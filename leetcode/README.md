@@ -50,3 +50,5 @@ private int dfs(int[][] grid, int x, int y) {
     return count;
 }
 ```
+
+- 994 腐烂的橘子(BFS): **多源bfs**。所有坏了的橘子同时纳入第一层进行搜索
